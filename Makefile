@@ -1,6 +1,6 @@
 .PHONY: fmt vet test all 
 
-all: fmt vet test
+all: fmt vet lint test
 
 fmt:
 	go fmt ./...
@@ -10,5 +10,6 @@ vet:
 
 lint:
 	golangci-lint run
+
 test:
 	go test -v -race ./...

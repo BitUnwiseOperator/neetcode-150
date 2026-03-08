@@ -27,7 +27,6 @@ func TestIsAnagram(t *testing.T) {
 			args:     args{nums: []int{1, 2, 3, 4}},
 			expected: false,
 		},
-		// Add more test cases here
 	}
 
 	// 3. Iterate over the table and run subtests
