@@ -31,7 +31,7 @@ func TestHasDuplicate(t *testing.T) {
 	// 3. Iterate over the table and run subtests
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := validAnagram(tt.args.nums)
+			result := hasDuplicate(tt.args.nums)
 			if result != tt.expected {
 				t.Errorf("got %v, want %v", result, tt.expected)
 			}
@@ -44,7 +44,7 @@ func TestHasDuplicate(t *testing.T) {
 // if that ever becomes true, i return true, else i return false.
 // this should be O(n) complexity, where the number of operations scales linearly
 // with the the of the array.
-func validAnagram(nums []int) bool {
+func hasDuplicate(nums []int) bool {
 	seen := make(map[int]struct{}, len(nums))
 	for _, num := range nums {
 		if _, ok := seen[num]; ok {
