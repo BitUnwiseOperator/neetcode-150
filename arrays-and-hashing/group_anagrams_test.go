@@ -2,7 +2,6 @@ package arrays
 
 import (
 	"slices"
-	"strings"
 	"testing"
 )
 
@@ -51,7 +50,7 @@ func compare2D(a, b [][]string) bool {
 
 	// 2. Sort the outer groups so they are in a predictable order
 	sortFunc := func(g1, g2 []string) int {
-		return strings.Compare(strings.Join(g1, ""), strings.Join(g2, ""))
+		return slices.Compare(g1, g2)
 	}
 	slices.SortFunc(a, sortFunc)
 	slices.SortFunc(b, sortFunc)
